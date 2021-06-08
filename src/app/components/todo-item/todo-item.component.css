@@ -1,0 +1,33 @@
+.todoItem span {
+  word-break: break-all;
+  padding: 0 15px;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+  font-size: 24px;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+::ng-deep .mat-checkbox-background {
+  border: solid 1px gray;
+}
+
+.deleteIcon {
+  color: rgba(255, 0, 0, .5);
+  position: absolute;
+  right: 15px;
+  display: none;
+}
+.deleteIcon:hover {
+  color: rgba(255, 0, 0, 1);
+  cursor: pointer;
+}
+
+.todoItem:hover .deleteIcon {
+  display: block;
+}

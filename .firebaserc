@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todoapp-423c7": {
+      "hosting": {
+        "todoapp": [
+          "todoapp-423c7"
+        ]
+      }
+    }
+  }
+}

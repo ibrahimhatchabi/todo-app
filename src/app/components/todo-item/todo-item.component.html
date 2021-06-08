@@ -1,0 +1,5 @@
+<div class="todoItem">
+  <mat-checkbox [(ngModel)]="item.isCompleted" (ngModelChange)="completeItem()"></mat-checkbox>
+  <span>{{ item.title }}</span>
+  <mat-icon class="deleteIcon" (click)="deleteItem(item)">clear</mat-icon>
+</div>
