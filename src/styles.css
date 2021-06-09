@@ -152,10 +152,10 @@ svg#clouds {
   }
 }
 
-.newTodo, .edit {
+.newTodo {
   position: relative;
   margin: 0;
-  width: 100%;
+  width: 60%;
   font-size: 24px;
   font-family: inherit;
   font-weight: inherit;
@@ -204,15 +204,50 @@ svg#clouds {
   height: 20px;
   text-align: center;
   border-top: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 99;
 }
 
-.actionsBloc:before {
+.actionsBloc::after {
   content: '';
   position: absolute;
+  z-index:  -1;
   right: 0;
   bottom: 0;
   left: 0;
   height: 50px;
   overflow: hidden;
   box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgb(0 0 0 / 20%), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgb(0 0 0 / 20%);
+}
+
+.category {
+  height: 50px;
+  font-size: 18px;
+  margin-left: 25px;
+}
+
+.filters span {
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.filters span.active {
+  border-color: rgba(175, 47, 47, 0.2);
+}
+
+.filters span:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+  cursor: pointer;
+}
+
+.clearCompleted:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }

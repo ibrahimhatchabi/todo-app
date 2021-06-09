@@ -1,5 +1,8 @@
 <div class="todoItem">
-  <mat-checkbox [(ngModel)]="item.isCompleted" (ngModelChange)="completeItem()"></mat-checkbox>
-  <span>{{ item.title }}</span>
-  <mat-icon class="deleteIcon" (click)="deleteItem(item)">clear</mat-icon>
+  <mat-checkbox *ngIf="!isEditing" [(ngModel)]="item.isCompleted" (ngModelChange)="completeItem()"></mat-checkbox>
+  <form *ngIf="isEditing" (ngSubmit)="updateItem(item)">
+    <input [(ngModel)]=item.title type="text" class="newTodo" name=title autofocus (focusout)="isEditing = false">
+  </form>
+  <span *ngIf="!isEditing" [class]="item.isCompleted ? 'completed' : ''" (dblclick)="isEditing = true">{{ item.title }}</span>
+  <mat-icon *ngIf="!isEditing" class="deleteIcon" (click)="deleteItem(item)">clear</mat-icon>
 </div>

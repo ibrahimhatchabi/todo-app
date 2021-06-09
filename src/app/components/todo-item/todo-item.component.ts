@@ -8,7 +8,10 @@ import { DatabaseService, TodoItem } from 'src/app/shared/services/database.serv
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
+  isEditing: boolean = false;
+
   @Input() item: TodoItem;
+  @Input() category: string;
 
   @Output() completionEvent = new EventEmitter<TodoItem>();
 
@@ -22,7 +25,12 @@ export class TodoItemComponent implements OnInit {
   }
 
   deleteItem (item: TodoItem) {
-    this.dataBase.deleteTodo(item)
+    this.dataBase.deleteTodo(item, this.category)
+  }
+
+  updateItem (item: TodoItem) {
+    this.dataBase.updateTodo(item, this.category)
+    this.isEditing = false;
   }
 
 }
