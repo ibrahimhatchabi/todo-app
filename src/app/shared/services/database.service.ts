@@ -24,8 +24,8 @@ export class DatabaseService {
 		const newTodo = this.database.list<TodoItem>(category).push({ id: '', title, isCompleted: false }).key;
     this.database.list<TodoItem>(category).update(newTodo, {id: newTodo});
     // Send Email
-    // this.http.get(`http://localhost:9999/sendemail?task=${title}`, {responseType: 'text'})
-    //   .subscribe((data) => console.log(data));
+    this.http.get(`http://localhost:9999/sendemail?task=${title}`, {responseType: 'text'})
+      .subscribe((data) => console.log(data));
 	}
 
 	updateTodo(item: TodoItem, category: string) {
