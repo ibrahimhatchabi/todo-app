@@ -29,7 +29,7 @@ export class DatabaseService {
 	}
 
 	updateTodo(item: TodoItem, category: string) {
-		this.database.list<TodoItem>(category).update(item.id, {isCompleted: item.isCompleted})
+		this.database.list<TodoItem>(category).update(item.id, {isCompleted: item.isCompleted, title: item.title})
 		.catch(
 			error => console.log("Something went wrong : ", error)
 		);
